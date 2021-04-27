@@ -1,9 +1,7 @@
 import React from 'react';
 import './Orders.css';
 
-const Orders = ({orders}) => {
-  console.log('orders', orders)
-  
+const Orders = ({orders, cancelOrder}) => {
   
   const orderEls = orders.map(order => {
     return (
@@ -14,6 +12,7 @@ const Orders = ({orders}) => {
             return <li key={index}>{ingredient}</li>
           })}
         </ul>
+        <button onClick={() => cancelOrder(order.id)}>Cancel Order</button>
       </div>
     )
   })
