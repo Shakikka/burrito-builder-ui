@@ -13,11 +13,27 @@ class OrderForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.clearInputs();
+    const order = {
+      id: Date.now(),
+      name: this.state.name,
+      ingredients: this.state.ingredients
+    }
+    if (this.state.length && this.state.ingredients.length) {
+      this.props.addBurrito(order)
+      this.clearInputs();
+    }
   }
 
   clearInputs = () => {
     this.setState({name: '', ingredients: []});
+  }
+
+  handleNameChange = e => {
+    this.setState({ name: e.target.value })
+  }
+
+  handleIngredientChange = e => {
+    e.preventDefault()
   }
 
   render() {
