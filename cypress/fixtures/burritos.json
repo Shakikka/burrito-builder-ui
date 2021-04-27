@@ -1,0 +1,7 @@
+{
+    "orders": [
+        {"id": 17, "name": "patpat", "ingredients": ["mustard", "pickles", "lamb shank", "french fries"]},
+        {"id": 87, "name": "Carl", "ingredients": ["cheese", "sour cream"]},
+        {"id": 43, "name": "Bessy", "ingredients": ["grass"]}
+    ]
+}
