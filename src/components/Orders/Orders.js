@@ -12,7 +12,7 @@ const Orders = ({orders, cancelOrder}) => {
             return <li key={index}>{ingredient}</li>
           })}
         </ul>
-        <button onClick={() => cancelOrder(order.id)}>Cancel Order</button>
+        <button name='delete' onClick={() => cancelOrder(order.id)}>Cancel Order</button>
       </div>
     )
   })
