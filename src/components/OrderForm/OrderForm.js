@@ -18,7 +18,7 @@ class OrderForm extends Component {
       name: this.state.name,
       ingredients: this.state.ingredients
     }
-    if (this.state.length && this.state.ingredients.length) {
+    if (this.state.name && this.state.ingredients.length) {
       this.props.addBurrito(order)
       this.clearInputs();
     }
@@ -34,13 +34,14 @@ class OrderForm extends Component {
 
   handleIngredientChange = e => {
     e.preventDefault()
+    this.setState({ ingredients: [...this.state.ingredients, e.target.value]})
   }
 
   render() {
     const possibleIngredients = ['beans', 'steak', 'carnitas', 'sofritas', 'lettuce', 'queso fresco', 'pico de gallo', 'hot sauce', 'guacamole', 'jalapenos', 'cilantro', 'sour cream'];
     const ingredientButtons = possibleIngredients.map(ingredient => {
       return (
-        <button key={ingredient} name={ingredient} onClick={e => this.handleIngredientChange(e)}>
+        <button key={ingredient} name={ingredient} value={ingredient} onClick={e => this.handleIngredientChange(e)}>
           {ingredient}
         </button>
       )
